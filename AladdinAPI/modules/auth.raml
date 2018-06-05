@@ -1,12 +1,53 @@
 #%RAML 1.0 NamedExample
 
-/login:
+/confirm_token:
   post:
+    description: Проверка валидности токена авторизации
     queryParameters:
       user_type: integer
-      phone: string
+      token: !include ../types/Token.dataType.raml
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include ../types/responses/UserResponse.dataType.raml
+
+/login:
+  post:
+    description: Проверка наличия номера телефона в БД
+    queryParameters:
+      user_type: integer
+      phone: !include ../types/Phone.dataType.raml
     responses:
       200:
         body:
           application/json:
             type: !include ../types/responses/BaseResponses.dataType.raml
+
+/register:
+  post:
+    description: Регистрация нового пользователя
+    queryParameters:
+      user_type: integer
+      first_name: string
+      last_name: string
+      email: string
+      phone: !include ../types/Phone.dataType.raml
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include ../types/responses/BaseResponses.dataType.raml
+
+/confirm_sms:
+  post:
+    description: Подтверждение номера телефона при авторизации
+    queryParameters:
+      user_type: integer
+      phone: !include ../types/Phone.dataType.raml
+      code: string
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include ../types/responses/UserResponse.dataType.raml

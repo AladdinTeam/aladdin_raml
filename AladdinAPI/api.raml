@@ -2,25 +2,6 @@
 title: Aladdin API
 version: v1
 baseUri: http://vsealaddin.ru/api
-types:
-  TestType:
-    type: object
-    properties:
-      id: number
-      optional?: string
-      expanded:
-        type: object
-        properties:
-          count: number
-/helloWorld:
-  get:
-    responses:
-      200:
-        body:
-          application/json:
-            example: |
-              {
-                "message" : "Hello World"
-              }
+
 /auth: !include modules/auth.raml
 /verify: !include modules/verify.raml
