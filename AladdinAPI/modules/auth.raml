@@ -1,1 +1,12 @@
-#%RAML 1.0
+#%RAML 1.0 AnnotationTypeDeclaration
+
+/login:
+  post:
+    queryParameters:
+      user_type: integer
+      phone: string
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include ../types/responses/BaseResponses.dataType.raml
