@@ -1,18 +1,16 @@
-#%RAML 1.0
-
-title: offer
+#%RAML 1.0 NamedExample
 
 /list_orders:
-  description: Получение списка заявок для мастера
+  description: Получение списка заявок(пул или активные)/истории для мастера
   post:
     queryParameters:
       token: !include ../types/Token.dataType.raml
+      type_order: !include ../types/typeOrder.dataType.raml
     responses:
       200:
         body:
           application/json:
-            type: !include ../types/responses/BaseResponses.dataType.raml
-            #Сменить на нужный респонс
+            type: !include ../types/responses/OrdersResponse.dateType.raml
 /order:
   description: Получение подробных сведений о заявке
   post:
@@ -22,36 +20,13 @@ title: offer
       200:
         body:
           application/json:
-            type: !include ../types/responses/BaseResponses.dataType.raml
+            type: !include ../types/responses/ConcreteOrderResponse.dataType.raml
 
 /response:
   description: Предложение мастера на конкретную заявку
   post:
     queryParameters:
-      response: !include ../types/Token.dataType.raml
-    responses:
-      200:
-        body:
-          application/json:
-            type: !include ../types/responses/BaseResponses.dataType.raml
-
-/list_active_orders:
-  description: Получение списка заявок для мастера
-  post:
-    queryParameters:
-      token: !include ../types/Token.dataType.raml
-    responses:
-      200:
-        body:
-          application/json:
-            type: !include ../types/responses/BaseResponses.dataType.raml
-            #Сменить на нужный респонс
-
-/list_history_orders:
-  description: Получение списка заявок истории
-  post:
-    queryParameters:
-      token: !include ../types/Token.dataType.raml
+      response: !include ../types/Offer.dataType.raml
     responses:
       200:
         body:
