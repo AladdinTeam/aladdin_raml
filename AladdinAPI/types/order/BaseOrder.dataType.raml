@@ -1,0 +1,10 @@
+#%RAML 1.0 DataType
+
+description: Базовая заявка, которая будет возвращена мастеру в пул (Не подробная)
+properties:
+  id: integer
+  name: string
+  price: string
+  date: datetime
+  category: !include ../SubCategory.dataType.raml
+  is_safety: boolean
