@@ -29,8 +29,8 @@
     description: Регистрация нового пользователя
     queryParameters:
       user_type: integer
-      first_name: string
-      last_name: string
+      first_name: !include ../types/FirstName.dataType.raml
+      last_name: !include ../types/LastName.dataType.raml
       email: string
       phone: !include ../types/Phone.dataType.raml
     responses:
@@ -45,7 +45,7 @@
     queryParameters:
       user_type: integer
       phone: !include ../types/Phone.dataType.raml
-      code: string
+      code: !include ../types/Code.dataType.raml
     responses:
       200:
         body:
