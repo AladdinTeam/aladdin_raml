@@ -1,0 +1,7 @@
+#%RAML 1.0 DataType
+
+description: Массив заявок
+properties:
+  orders:
+    type: array
+    items: !include BaseOrder.dataType.raml
