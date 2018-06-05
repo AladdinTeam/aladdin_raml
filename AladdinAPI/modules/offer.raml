@@ -1,0 +1,84 @@
+#%RAML 1.0
+
+title: offer
+
+/list_orders:
+  description: Получение списка заявок для мастера
+  post:
+    queryParameters:
+      token: !include ../types/Token.dataType.raml
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include ../types/responses/BaseResponses.dataType.raml
+            #Сменить на нужный респонс
+/order:
+  description: Получение подробных сведений о заявке
+  post:
+    queryParameters:
+      id_order: integer
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include ../types/responses/BaseResponses.dataType.raml
+
+/response:
+  description: Предложение мастера на конкретную заявку
+  post:
+    queryParameters:
+      response: !include ../types/Token.dataType.raml
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include ../types/responses/BaseResponses.dataType.raml
+
+/list_active_orders:
+  description: Получение списка заявок для мастера
+  post:
+    queryParameters:
+      token: !include ../types/Token.dataType.raml
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include ../types/responses/BaseResponses.dataType.raml
+            #Сменить на нужный респонс
+
+/list_history_orders:
+  description: Получение списка заявок истории
+  post:
+    queryParameters:
+      token: !include ../types/Token.dataType.raml
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include ../types/responses/BaseResponses.dataType.raml
+
+/add_service:
+  description: Добавление услуги к заявке
+  post:
+    queryParameters:
+      token: !include ../types/Token.dataType.raml
+      adding_service: !include ../types/Price.dataType.raml
+      id_order: integer
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include ../types/responses/BaseResponses.dataType.raml
+
+/complete_order:
+  description: Завершение заявки со стороны мастера
+  post:
+    queryParameters:
+      token: !include ../types/Token.dataType.raml
+      id_order: integer
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include ../types/responses/BaseResponses.dataType.raml
