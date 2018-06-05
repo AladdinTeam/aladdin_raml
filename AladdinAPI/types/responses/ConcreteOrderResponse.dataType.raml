@@ -1,0 +1,7 @@
+#%RAML 1.0 DataType
+
+description: Респонс, отправляющий подробное описание заявки
+type: !include BaseResponses.dataType.raml
+properties:
+  order: !include ../order/ConcreteOrder.dataType.raml
+  
