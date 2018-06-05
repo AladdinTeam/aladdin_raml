@@ -1,0 +1,24 @@
+#%RAML 1.0 DataType
+
+type: !include User.dataType.raml
+properties:
+  confirmed:
+    type: boolean
+    description: Является ли подтвержденным
+  subways:
+    type: array
+    items: !include ../Subway.dataType.raml
+  about:
+    type: string
+    description: Информация о мастере
+  avatar: file
+  rating: integer
+  prices:
+    type: array
+    items: !include ../Price.dataType.raml
+  categories:
+    type: array
+    items: !include ../Category.dataType.raml
+  subcategories:
+    type: array
+    items: !include ../SubCategory.dataType.raml
