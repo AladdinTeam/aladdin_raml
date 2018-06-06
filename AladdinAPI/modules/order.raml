@@ -26,7 +26,10 @@
   description: Предложение мастера на конкретную заявку
   post:
     queryParameters:
-      response: !include ../types/Offer.dataType.raml
+      token: !include ../types/Token.dataType.raml
+      commentary: string
+      price: string
+      date: datetime
     responses:
       200:
         body:
