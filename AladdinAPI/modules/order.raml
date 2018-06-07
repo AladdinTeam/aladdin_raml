@@ -5,7 +5,7 @@
   post:
     queryParameters:
       token: !include ../types/Token.dataType.raml
-      type_or der: !include ../types/typeOrder.dataType.raml
+      type_order: !include ../types/typeOrder.dataType.raml
     responses:
       200:
         body:
@@ -15,7 +15,7 @@
   description: Получение подробных сведений о заявке
   post:
     queryParameters:
-      id_order: integer
+      order_id: integer
     responses:
       200:
         body:
@@ -42,7 +42,9 @@
   post:
     queryParameters:
       token: !include ../types/Token.dataType.raml
-      adding_service: !include ../types/Price.dataType.raml
+      service_name: string
+      price: integer
+      units: string
       order_id: integer
     responses:
       200:
@@ -55,7 +57,7 @@
   post:
     queryParameters:
       token: !include ../types/Token.dataType.raml
-      id_order: integer
+      order_id: integer
     responses:
       200:
         body:
