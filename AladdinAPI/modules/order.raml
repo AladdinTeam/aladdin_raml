@@ -4,8 +4,8 @@
   description: Получение списка заявок(пул или активные)/истории для мастера
   post:
     queryParameters:
-      token: !include ../types/Token.dataType.raml
-      type_order: !include ../types/typeOrder.dataType.raml
+      token: !include ../types/Token.DataType.raml
+      type_order: !include ../types/typeOrder.DataType.raml
     responses:
       200:
         body:
@@ -20,13 +20,13 @@
       200:
         body:
           application/json:
-            type: !include ../types/responses/ConcreteOrderResponse.dataType.raml
+            type: !include ../types/responses/ConcreteOrderResponse.DataType.raml
 
 /response:
   description: Предложение мастера на конкретную заявку
   post:
     queryParameters:
-      token: !include ../types/Token.dataType.raml
+      token: !include ../types/Token.DataType.raml
       id: integer
       commentary: string
       price: string
@@ -35,13 +35,13 @@
       200:
         body:
           application/json:
-            type: !include ../types/responses/BaseResponses.dataType.raml
+            type: !include ../types/responses/BaseResponses.DataType.raml
 
 /add_service:
   description: Добавление услуги к заявке
   post:
     queryParameters:
-      token: !include ../types/Token.dataType.raml
+      token: !include ../types/Token.DataType.raml
       service_name: string
       price: integer
       units: string
@@ -50,16 +50,16 @@
       200:
         body:
           application/json:
-            type: !include ../types/responses/BaseResponses.dataType.raml
+            type: !include ../types/responses/BaseResponses.DataType.raml
 
 /complete_order:
   description: Завершение заявки со стороны мастера
   post:
     queryParameters:
-      token: !include ../types/Token.dataType.raml
+      token: !include ../types/Token.DataType.raml
       order_id: integer
     responses:
       200:
         body:
           application/json:
-            type: !include ../types/responses/BaseResponses.dataType.raml
+            type: !include ../types/responses/BaseResponses.DataType.raml

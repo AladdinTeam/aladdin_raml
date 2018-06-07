@@ -8,15 +8,15 @@
       200:
         body:
           application/json:
-            type: !include ../types/responses/CategoryResponse.dataType.raml
+            type: !include ../types/responses/CategoryResponse.DataType.raml
         description: |
           Succesfully retrieved resource
   post:
     queryParameters:
-      token: !include ../types/Token.dataType.raml
+      token: !include ../types/Token.DataType.raml
       subcategories:
         type: array
-        items: !include ../types/SubCategory.dataType.raml
+        items: !include ../types/SubCategory.DataType.raml
     description: |
       Create a new resource
     body:
@@ -25,7 +25,7 @@
       200:
         body:
           application/json:
-            type: !include ../types/responses/BaseResponses.dataType.raml
+            type: !include ../types/responses/BaseResponses.DataType.raml
 
 /test:
   get:
@@ -37,10 +37,10 @@
           список вопросов
         body:
           application/json:
-            type: !include ../types/responses/QuestionResponse.dataType.raml
+            type: !include ../types/responses/QuestionResponse.DataType.raml
   post:
     queryParameters:
-      token: !include ../types/Token.dataType.raml
+      token: !include ../types/Token.DataType.raml
     description: |
       Create a new resource
     body:
@@ -49,12 +49,12 @@
       200:
         body:
           application/json:
-            type: !include ../types/responses/BaseResponses.dataType.raml
+            type: !include ../types/responses/BaseResponses.DataType.raml
 
 /upload_photo:
   post:
     queryParameters:
-      token: !include ../types/Token.dataType.raml
+      token: !include ../types/Token.DataType.raml
       isAvatar: boolean
       isPassport: boolean
       isDocument: boolean
@@ -67,14 +67,14 @@
       200:
         body:
           application/json:
-            type: !include ../types/responses/BaseResponses.dataType.raml
+            type: !include ../types/responses/BaseResponses.DataType.raml
 
 /main_info:
   post:
     queryParameters:
-      token: !include ../types/Token.dataType.raml
-      first_name: !include ../types/FirstName.dataType.raml
-      last_name: !include ../types/LastName.dataType.raml
+      token: !include ../types/Token.DataType.raml
+      first_name: !include ../types/FirstName.DataType.raml
+      last_name: !include ../types/LastName.DataType.raml
       email: string
       birthdate: date-only
     description: |
@@ -83,7 +83,7 @@
       200:
         body:
           application/json:
-            type: !include ../types/responses/BaseResponses.dataType.raml
+            type: !include ../types/responses/BaseResponses.DataType.raml
 
 /subway_info:
   get:
@@ -93,13 +93,13 @@
       200:
         body:
           application/json:
-            type: !include ../types/responses/SubwayResponse.dataType.raml
+            type: !include ../types/responses/SubwayResponse.DataType.raml
   post:
     queryParameters:
-      token: !include ../types/Token.dataType.raml
+      token: !include ../types/Token.DataType.raml
       subways:
         type: array
-        items: !include ../types/Subway.dataType.raml
+        items: !include ../types/Subway.DataType.raml
       expirienses: string
       education: string
       about: string
@@ -109,15 +109,15 @@
       200:
         body:
           application/json:
-            type: !include ../types/responses/BaseResponses.dataType.raml
+            type: !include ../types/responses/BaseResponses.DataType.raml
 
 /about_price_sale:
   post:
     queryParameters:
-      token: !include ../types/Token.dataType.raml
+      token: !include ../types/Token.DataType.raml
       services:
         type: array
-        items: !include ../types/Price.dataType.raml
+        items: !include ../types/Price.DataType.raml
       sales: string
     description: |
       Сохранение информации о мастере, его цен и скидок
@@ -125,12 +125,12 @@
       200:
         body:
           application/json:
-            type: !include ../types/responses/BaseResponses.dataType.raml
+            type: !include ../types/responses/BaseResponses.DataType.raml
 
 /call_time:
   post:
     queryParameters:
-      token: !include ../types/Token.dataType.raml
+      token: !include ../types/Token.DataType.raml
       call_time: datetime
     description: |
       Установка времени звонка

@@ -1,10 +1,10 @@
 #%RAML 1.0 DataType
 
-type: !include BaseOrder.dataType.raml
+type: !include BaseOrder.DataType.raml
 description: Конкретная заявка
 properties:
   description: string
-  subway: !include ../Subway.dataType.raml
+  subway: !include ../Subway.DataType.raml
   additional_services:
     type: array
-    items: !include ../AckPrice.dataType.raml
+    items: !include ../AckPrice.DataType.raml

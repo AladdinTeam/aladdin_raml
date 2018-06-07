@@ -5,49 +5,49 @@
     description: Проверка валидности токена авторизации
     queryParameters:
       user_type: integer
-      token: !include ../types/Token.dataType.raml
+      token: !include ../types/Token.DataType.raml
     responses:
       200:
         body:
           application/json:
-            type: !include ../types/responses/UserResponse.dataType.raml
+            type: !include ../types/responses/UserResponse.DataType.raml
 
 /login:
   post:
     description: Проверка наличия номера телефона в БД
     queryParameters:
       user_type: integer
-      phone: !include ../types/Phone.dataType.raml
+      phone: !include ../types/Phone.DataType.raml
     responses:
       200:
         body:
           application/json:
-            type: !include ../types/responses/BaseResponses.dataType.raml
+            type: !include ../types/responses/BaseResponses.DataType.raml
 
 /register:
   post:
     description: Регистрация нового пользователя
     queryParameters:
       user_type: integer
-      first_name: !include ../types/FirstName.dataType.raml
-      last_name: !include ../types/LastName.dataType.raml
+      first_name: !include ../types/FirstName.DataType.raml
+      last_name: !include ../types/LastName.DataType.raml
       email: string
-      phone: !include ../types/Phone.dataType.raml
+      phone: !include ../types/Phone.DataType.raml
     responses:
       200:
         body:
           application/json:
-            type: !include ../types/responses/BaseResponses.dataType.raml
+            type: !include ../types/responses/BaseResponses.DataType.raml
 
 /confirm_sms:
   post:
     description: Подтверждение номера телефона при авторизации
     queryParameters:
       user_type: integer
-      phone: !include ../types/Phone.dataType.raml
-      code: !include ../types/Code.dataType.raml
+      phone: !include ../types/Phone.DataType.raml
+      code: !include ../types/Code.DataType.raml
     responses:
       200:
         body:
           application/json:
-            type: !include ../types/responses/UserResponse.dataType.raml
+            type: !include ../types/responses/UserResponse.DataType.raml
