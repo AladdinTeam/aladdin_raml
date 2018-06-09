@@ -5,12 +5,12 @@
   post:
     queryParameters:
       token: !include ../types/Token.DataType.raml
-      type_order: !include ../types/typeOrder.DataType.raml
+      order_type: !include ../types/typeOrder.DataType.raml
     responses:
       200:
         body:
           application/json:
-            type: !include ../types/responses/OrdersResponse.dateType.raml
+            type: !include ../types/responses/OrdersResponse.DataType.raml
 /order:
   description: Получение подробных сведений о заявке
   post:
