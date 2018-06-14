@@ -44,7 +44,6 @@
       token: !include ../types/Token.DataType.raml
       name: string
       price: integer
-      units: string
       order_id: integer
     responses:
       200:
@@ -63,3 +62,9 @@
         body:
           application/json:
             type: !include ../types/responses/BaseResponses.DataType.raml
+
+# /add_card:
+#   description: Добавление карты пользователя
+#   post:
+#     queryParameters:
+#
