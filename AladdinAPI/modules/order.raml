@@ -35,7 +35,7 @@
       200:
         body:
           application/json:
-            type: !include ../types/responses/BaseResponses.DataType.raml
+            type: !include ../types/responses/BaseResponse.DataType.raml
 
 /add_service:
   description: Добавление услуги к заявке
@@ -49,7 +49,7 @@
       200:
         body:
           application/json:
-            type: !include ../types/responses/BaseResponses.DataType.raml
+            type: !include ../types/responses/BaseResponse.DataType.raml
 
 /complete_order:
   description: Завершение заявки со стороны мастера
@@ -61,10 +61,15 @@
       200:
         body:
           application/json:
-            type: !include ../types/responses/BaseResponses.DataType.raml
+            type: !include ../types/responses/BaseResponse.DataType.raml
 
-# /add_card:
-#   description: Добавление карты пользователя
-#   post:
-#     queryParameters:
-#
+/add_card:
+  description: Добавление карты пользователя
+  post:
+    queryParameters:
+      sc_id: integer
+    responses:
+      200:
+        body:
+          application/json:
+            type:
